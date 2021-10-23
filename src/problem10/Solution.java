@@ -18,7 +18,17 @@ public class Solution {
         return count;
     }
 
+    public static int betterCount(int n) {
+        int count = 0;
+        while (n != 0) {
+            n = n & (n - 1);
+            count++;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
-        System.out.println(count(9));
+        System.out.println(count(0x80000000));
+        System.out.println(betterCount(0x80000000));
     }
 }
